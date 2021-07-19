@@ -2,7 +2,7 @@ const pool = require('../database/connection');
 
 module.exports = {
     async getAllQuestions(req, res) {
-        const response = await pool.query("SELECT * FROM questions");
+        const response = await pool.query("SELECT * FROM questions order by id");
         res.status(200).json({response: response.rows});
     },
 
@@ -39,6 +39,29 @@ module.exports = {
         ]);
         res.status(200).json({response: response.rows[0].id});
     },
+    
+    async updateQuestion(req, res) {
+        await pool.query("UPDATE questions SET description = $1, option_a = $2, option_b = $3, option_c = $4, option_d = $5, correct_option = $6, difficulty = $7, subject = $8, author = $9 WHERE id = $10", [
+            req.body.description,
+            req.body.option_a,
+            req.body.option_b,
+            req.body.option_c,
+            req.body.option_d,
+            req.body.answer,
+            req.body.difficulty,
+            req.body.subject,
+            req.body.author.toLowerCase(),
+            req.params.id
+        ]);
+        res.status(200).json();;
+    },
+
+    async deleteQuestion(req, res) {
+        await pool.query("DELETE FROM questions WHERE id = $1", [
+            req.params.id
+        ]);
+        res.status(200).json();;
+    }
     
 };  
 
