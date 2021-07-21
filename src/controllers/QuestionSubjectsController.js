@@ -20,7 +20,7 @@ module.exports = {
             req.body.subject,
             req.body.subject_simplified.toLowerCase(),
             'false',
-            req.body.channel.toLowerCase()
+            req.body.channel
         ]);
         res.status(200).json({response: response.rows[0].id});
     },
