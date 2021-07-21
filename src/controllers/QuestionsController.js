@@ -106,7 +106,7 @@ async function adaptSubjectsToDatabase(subjects) {
     let new_subjects_array = [];
     new_subjects_array.push(subjects);
     
-    const response = await pool.query(`SELECT id FROM question_subjects WHERE subject_simplified = ANY ($1)`, [
+    const response = await pool.query(`SELECT id FROM question_subjects WHERE subject = ANY ($1)`, [
         new_subjects_array
     ]);
 
