@@ -18,7 +18,7 @@ routes.delete('/question/:id', QuestionsController.deleteQuestion);
 routes.get('/questions/subjects', QuestionSubjectsController.get_all_subjects);
 routes.get('/questions/subjects/channel', QuestionSubjectsController.getGeneralAndChannelSubjects);
 
-routes.post('/questions/subject', QuestionSubjectsController.createChannelSubject);
+routes.post('/questions/subject', QuestionSubjectsController.createSubject);
 
 routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestionSubject);
 
