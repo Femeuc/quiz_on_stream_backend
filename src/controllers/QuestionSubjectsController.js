@@ -3,7 +3,7 @@ const pool = require('../database/connection');
 
 module.exports = {
 
-    async get_all_subjects() {
+    async get_all_subjects(req, res) {
         const response = await pool.query("SELECT * FROM question_subjects");
         res.status(200).json({response: response.rows});
     },
