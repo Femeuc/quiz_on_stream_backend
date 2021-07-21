@@ -20,4 +20,6 @@ routes.get('/questions/subjects/channel', QuestionSubjectsController.getGeneralA
 
 routes.post('/questions/subject', QuestionSubjectsController.createChannelSubject);
 
+routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestionSubject);
+
 module.exports = routes;

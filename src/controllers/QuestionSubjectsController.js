@@ -23,5 +23,12 @@ module.exports = {
             req.body.channel.toLowerCase()
         ]);
         res.status(200).json({response: response.rows[0].id});
+    },
+
+    async deleteQuestionSubject(req, res) {
+        await pool.query("DELETE FROM question_subjects WHERE id = $1", [
+            req.params.id
+        ]);
+        res.status(200).json();;
     }
 };  
