@@ -26,7 +26,7 @@ module.exports = {
     }, 
 
     async getQuestionJoinQuestionSubject(req, res) {
-        const sql_statement = "SELECT questions.id AS question_id, description, option_a, option_b, option_c, option_d," 
+        const sql_statement = "SELECT questions.id AS question_id, description, option_a, option_b, option_c, option_d, correct_option," 
             + " difficulties.name AS difficulty, question_subjects.subject AS subject, author FROM questions INNER JOIN " 
             + "difficulties ON difficulty = difficulties.id INNER JOIN question_subjects ON questions.subject = question_subjects.id WHERE questions.id = $1";
 
