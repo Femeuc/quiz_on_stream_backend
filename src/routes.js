@@ -7,6 +7,7 @@ const QuestionSubjectsController = require('./controllers/QuestionSubjectsContro
 routes.get('/questions', QuestionsController.getAllQuestions);
 routes.get('/question/:id', QuestionsController.getQuestionById);
 routes.get('/questions/filters', QuestionsController.getQuestionsByFilters);
+routes.get('/question/join/question-subject/:id', QuestionsController.getQuestionJoinQuestionSubject);
 
 routes.post('/question', QuestionsController.createQuestion);
 

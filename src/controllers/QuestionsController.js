@@ -25,6 +25,18 @@ module.exports = {
         res.status(200).json({response: response.rows});
     }, 
 
+    async getQuestionJoinQuestionSubject(req, res) {
+        const sql_statement = "SELECT questions.id AS question_id, description, option_a, option_b, option_c, option_d," 
+            + " difficulties.name AS difficulty, question_subjects.subject AS subject, author FROM questions INNER JOIN " 
+            + "difficulties ON difficulty = difficulties.id INNER JOIN question_subjects ON questions.subject = question_subjects.id WHERE questions.id = $1";
+
+        const response = await pool.query(sql_statement, [
+            req.params.id
+        ]);
+        res.status(200).json({response: response.rows});
+        
+    }, 
+
     async createQuestion(req, res) {
         const response = await pool.query("INSERT INTO questions (description, option_a, option_b, option_c, option_d, correct_option, difficulty, subject, author) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id", [
             req.body.description,
