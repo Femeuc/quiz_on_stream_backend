@@ -3,6 +3,7 @@ const routes = Router();
 
 const QuestionsController = require('./controllers/QuestionsController');
 const QuestionSubjectsController = require('./controllers/QuestionSubjectsController');
+const QuestionReportController = require('./controllers/QuestionReportController');
 
 routes.get('/questions', QuestionsController.getAllQuestions);
 routes.get('/question/:id', QuestionsController.getQuestionById);
@@ -22,5 +23,8 @@ routes.get('/questions/subjects/channel', QuestionSubjectsController.getGeneralA
 routes.post('/questions/subject', QuestionSubjectsController.createSubject);
 
 routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestionSubject);
+
+
+routes.post('/question/report', QuestionReportController.createReport);
 
 module.exports = routes;
