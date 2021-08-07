@@ -5,6 +5,7 @@ const QuestionsController = require('./controllers/QuestionsController');
 const QuestionSubjectsController = require('./controllers/QuestionSubjectsController');
 const QuestionReportController = require('./controllers/QuestionReportController');
 const QuestionSuggestController = require('./controllers/QuestionSuggestController');
+const SubjectSuggestionController = require('./controllers/SubjectSuggestionController');
 
 routes.get('/questions', QuestionsController.getAllQuestions);
 routes.get('/question/:id', QuestionsController.getQuestionById);
@@ -22,5 +23,6 @@ routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestio
 routes.post('/question/report', QuestionReportController.createReport);
 
 routes.post('/question/suggest', QuestionSuggestController.createSuggestion);
+routes.post('/questions/subject/suggest', SubjectSuggestionController.createSuggestion);
 
 module.exports = routes;
