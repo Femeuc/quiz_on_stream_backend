@@ -23,6 +23,7 @@ routes.post('/questions/subject', QuestionSubjectsController.createSubject);
 routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestionSubject);
 
 // Question Report Controller routes
+routes.get('/questions/reports', QuestionReportController.getAllReports);
 routes.post('/question/report', QuestionReportController.createReport);
 
 // Question Suggestion Controller routes
@@ -30,6 +31,7 @@ routes.get('/questions/suggestions', QuestionSuggestController.getAllSuggestions
 routes.post('/question/suggest', QuestionSuggestController.createSuggestion);
 
 // Subject Suggestion Controller route
+routes.get('/questions/subjects/suggestions', SubjectSuggestionController.getAllSuggestions);
 routes.post('/questions/subject/suggest', SubjectSuggestionController.createSuggestion);
 
 module.exports = routes;
