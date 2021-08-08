@@ -3,9 +3,9 @@ const pool = require('../database/connection');
 module.exports = {
     async getAllSuggestions(req, res) {
         const response = await pool.query("SELECT * FROM suggestions");
-        res.status(200).json({response: response.rows[0]});
+        res.status(200).json({response: response.rows});
     },
-    
+
     async createSuggestion(req, res) { 
         const response = await pool.query("INSERT INTO suggestions (description, option_a, option_b, option_c, option_d, correct_option, difficulty, subject, author) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id", [
             req.body.description,
