@@ -14,5 +14,10 @@ module.exports = {
             req.body.author.toLowerCase()
         ]);
         res.status(200).json({response: response.rows[0].id});
-    } 
+    }, 
+
+    async getAllSuggestions(req, res) {
+        const response = await pool.query("SELECT * FROM suggestions");
+        res.status(200).json({response: response.rows[0]});
+    }
 };
