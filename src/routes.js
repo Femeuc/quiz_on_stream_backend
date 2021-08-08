@@ -26,7 +26,7 @@ routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestio
 routes.post('/question/report', QuestionReportController.createReport);
 
 // Question Suggestion Controller routes
-routes.get('/question/suggestions', QuestionSuggestController.getAllSuggestions);
+routes.get('/questions/suggestions', QuestionSuggestController.getAllSuggestions);
 routes.post('/question/suggest', QuestionSuggestController.createSuggestion);
 
 // Subject Suggestion Controller route
