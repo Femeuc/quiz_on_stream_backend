@@ -1,6 +1,13 @@
 const pool = require('../database/connection');
 
 module.exports = {
+    async getExplanationById(req, res) {
+        const response = await pool.query("SELECT * FROM explanations WHERE question_id = $1", [
+            req.params.id
+        ]);
+        res.status(200).json({response: response.rows});
+    },
+
     async getAllExplanations(req, res) {
         const response = await pool.query("SELECT * FROM explanations");
         res.status(200).json({response: response.rows});

@@ -19,6 +19,7 @@ routes.put('/question/:id', QuestionsController.updateQuestion);
 routes.delete('/question/:id', QuestionsController.deleteQuestion);
 
 // Question Explanation Controller 
+routes.get('/questions/explanation/:id', QuestionExplanationController.getExplanationById);
 routes.get('/questions/explanations', QuestionExplanationController.getAllExplanations);
 routes.post('/question/explanation', QuestionExplanationController.createExplanation);
 
