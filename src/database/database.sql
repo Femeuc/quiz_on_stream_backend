@@ -23,5 +23,8 @@ INSERT INTO "subject_suggestion" ("subject", "subject_simplified", "is_general_s
 CREATE TABLE "explanations" ("id" SERIAL PRIMARY KEY, "text" varchar NOT NULL, "question_id" INT NOT NULL);
 ALTER TABLE "explanations" ADD FOREIGN KEY ("question_id") REFERENCES "questions" ("id");
 
+CREATE TABLE "explanations_suggestions" ("id" SERIAL PRIMARY KEY, "text" varchar NOT NULL, "question_id" INT NOT NULL);
+ALTER TABLE "explanations_suggestions" ADD FOREIGN KEY ("question_id") REFERENCES "suggestions" ("id");
+
 /* INNER JOIN */
 SELECT questions.id AS question_id, description, option_a, option_b, option_c, option_d, difficulties.name AS difficulty, question_subjects.subject AS subject, author FROM questions INNER JOIN difficulties ON difficulty = difficulties.id INNER JOIN question_subjects ON questions.subject = question_subjects.id;

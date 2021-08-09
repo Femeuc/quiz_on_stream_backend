@@ -7,6 +7,7 @@ const QuestionSubjectsController = require('./controllers/QuestionSubjectsContro
 const QuestionReportController = require('./controllers/QuestionReportController');
 const QuestionSuggestController = require('./controllers/QuestionSuggestController');
 const SubjectSuggestionController = require('./controllers/SubjectSuggestionController');
+const ExplanationSuggestionController = require('./controllers/ExplanationSuggestionController');
 
 // Question Controller routes
 routes.get('/questions', QuestionsController.getAllQuestions);
@@ -38,5 +39,9 @@ routes.post('/question/suggest', QuestionSuggestController.createSuggestion);
 // Subject Suggestion Controller route
 routes.get('/questions/subjects/suggestions', SubjectSuggestionController.getAllSuggestions);
 routes.post('/questions/subject/suggest', SubjectSuggestionController.createSuggestion);
+
+// Explanation Suggestion Controller routes
+routes.get('/questions/explanations/suggestions', ExplanationSuggestionController.getAllExplanations);
+routes.post('/question/explanation/suggestion', ExplanationSuggestionController.createExplanation);
 
 module.exports = routes;
