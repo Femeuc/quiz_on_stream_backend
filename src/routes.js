@@ -2,6 +2,7 @@ const { Router } = require('express');
 const routes = Router();
 
 const QuestionsController = require('./controllers/QuestionsController');
+const QuestionExplanationController = require('./controllers/QuestionExplanationController');
 const QuestionSubjectsController = require('./controllers/QuestionSubjectsController');
 const QuestionReportController = require('./controllers/QuestionReportController');
 const QuestionSuggestController = require('./controllers/QuestionSuggestController');
@@ -15,6 +16,9 @@ routes.get('/question/join/question-subject/:id', QuestionsController.getQuestio
 routes.post('/question', QuestionsController.createQuestion);
 routes.put('/question/:id', QuestionsController.updateQuestion);
 routes.delete('/question/:id', QuestionsController.deleteQuestion);
+
+// Question Explanation Controller
+routes.post('question/explanation', QuestionExplanationController.createExplanation);
 
 // Question Subjects Controller routes
 routes.get('/questions/subjects', QuestionSubjectsController.get_all_subjects);
