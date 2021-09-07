@@ -9,6 +9,7 @@ const QuestionSuggestController = require('./controllers/QuestionSuggestControll
 const SubjectSuggestionController = require('./controllers/SubjectSuggestionController');
 const ExplanationSuggestionController = require('./controllers/ExplanationSuggestionController');
 
+
 // Question Controller routes
 routes.get('/questions', QuestionsController.getAllQuestions);
 routes.get('/question/:id', QuestionsController.getQuestionById);
@@ -44,5 +45,10 @@ routes.post('/questions/subject/suggest', SubjectSuggestionController.createSugg
 // Explanation Suggestion Controller routes
 routes.get('/questions/explanations/suggestions', ExplanationSuggestionController.getAllExplanations);
 routes.post('/question/explanation/suggestion', ExplanationSuggestionController.createExplanation);
+
+
+/* EITHER */
+const EitherQuestionController = require('./controllers/either/QuestionController');
+routes.post('/question/send', EitherQuestionController.send_question);
 
 module.exports = routes;

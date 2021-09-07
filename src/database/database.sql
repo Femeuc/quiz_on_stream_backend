@@ -28,3 +28,6 @@ ALTER TABLE "explanations_suggestions" ADD FOREIGN KEY ("question_id") REFERENCE
 
 /* INNER JOIN */
 SELECT questions.id AS question_id, description, option_a, option_b, option_c, option_d, difficulties.name AS difficulty, question_subjects.subject AS subject, author FROM questions INNER JOIN difficulties ON difficulty = difficulties.id INNER JOIN question_subjects ON questions.subject = question_subjects.id;
+
+/* EITHER on Stream */
+CREATE TABLE "either" ("id" SERIAL PRIMARY KEY, "option_1" VARCHAR NOT NULL, "option_2" VARCHAR NOT NULL, "author" VARCHAR NOT NULL);
