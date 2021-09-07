@@ -49,6 +49,7 @@ routes.post('/question/explanation/suggestion', ExplanationSuggestionController.
 
 /* EITHER */
 const EitherQuestionController = require('./controllers/either/QuestionController');
-routes.post('/question/send', EitherQuestionController.send_question);
+routes.get('/either/getall', EitherQuestionController.get_all_questions);
+routes.post('/either/send', EitherQuestionController.send_question);
 
 module.exports = routes;
