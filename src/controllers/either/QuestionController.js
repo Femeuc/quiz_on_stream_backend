@@ -3,7 +3,7 @@ const pool = require('../../database/connection');
 module.exports = {
     async get_all_questions(req, res) {
         const response = await pool.query("SELECT * FROM either");
-        res.status(200).json({response: response.rows[0]});
+        res.status(200).json({response: response.rows});
     }, 
 
     async send_question(req, res) {
