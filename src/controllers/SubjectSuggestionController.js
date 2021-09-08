@@ -14,5 +14,12 @@ module.exports = {
             req.body.channel
         ]);
         res.status(200).json({response: response.rows[0].id});
-    } 
+    }, 
+
+    async deleteSuggestion(req, res) {
+        await pool.query("DELETE FROM subject_suggestion WHERE id = $1", [
+            req.params.id
+        ]);
+        res.status(200).json();;
+    }
 };

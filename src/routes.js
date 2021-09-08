@@ -33,6 +33,7 @@ routes.delete('/questions/subject/:id', QuestionSubjectsController.deleteQuestio
 // Question Report Controller routes
 routes.get('/questions/reports', QuestionReportController.getAllReports);
 routes.post('/question/report', QuestionReportController.createReport);
+routes.delete('/questions/reports/:id', QuestionReportController.deleteReport);
 
 // Question Suggestion Controller routes
 routes.get('/questions/suggestions', QuestionSuggestController.getAllSuggestions);
@@ -41,6 +42,7 @@ routes.post('/question/suggest', QuestionSuggestController.createSuggestion);
 // Subject Suggestion Controller route
 routes.get('/questions/subjects/suggestions', SubjectSuggestionController.getAllSuggestions);
 routes.post('/questions/subject/suggest', SubjectSuggestionController.createSuggestion);
+routes.delete('/questions/subjects/suggestion/:id', SubjectSuggestionController.deleteSuggestion);
 
 // Explanation Suggestion Controller routes
 routes.get('/questions/explanations/suggestions', ExplanationSuggestionController.getAllExplanations);

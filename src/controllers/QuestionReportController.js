@@ -13,5 +13,12 @@ module.exports = {
             req.body.motive
         ]);
         res.status(200).json({response: response.rows[0].id});
-    } 
+    }, 
+
+    async deleteReport(req, res) {
+        await pool.query("DELETE FROM reports WHERE id = $1", [
+            req.params.id
+        ]);
+        res.status(200).json();;
+    }
 };
