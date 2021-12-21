@@ -12,5 +12,12 @@ module.exports = {
             req.body.question_id
         ]);
         res.status(200).json({response: response.rows[0].id});
-    } 
+    }, 
+
+    async deleteExplanation(req, res) { 
+        await pool.query("DELETE FROM explanations_suggestions WHERE id = $1", [
+            req.params.id
+        ]);
+        res.status(200).json();
+    }
 };
