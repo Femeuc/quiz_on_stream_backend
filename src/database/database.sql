@@ -26,6 +26,8 @@ ALTER TABLE "explanations" ADD FOREIGN KEY ("question_id") REFERENCES "questions
 CREATE TABLE "explanations_suggestions" ("id" SERIAL PRIMARY KEY, "text" varchar NOT NULL, "question_id" INT NOT NULL);
 ALTER TABLE "explanations_suggestions" ADD FOREIGN KEY ("question_id") REFERENCES "suggestions" ("id");
 
+CREATE TABLE "words_list" ("id" SERIAL PRIMARY KEY, "words_list" TEXT NOT NULL, "author" varchar NOT NULL);
+
 /* INNER JOIN */
 SELECT questions.id AS question_id, description, option_a, option_b, option_c, option_d, difficulties.name AS difficulty, question_subjects.subject AS subject, author FROM questions INNER JOIN difficulties ON difficulty = difficulties.id INNER JOIN question_subjects ON questions.subject = question_subjects.id;
 
