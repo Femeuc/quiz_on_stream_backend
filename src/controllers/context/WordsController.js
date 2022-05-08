@@ -9,7 +9,7 @@ module.exports = {
     async send(req, res) {
         const response = await pool.query("INSERT INTO words_list (words_list, author) VALUES ($1, $2) RETURNING id", [
             req.body.words_list,
-            req.body.autho
+            req.body.author
         ]);
         res.status(200).json({response: response.rows[0].id});
     } 
