@@ -57,7 +57,8 @@ routes.get('/either/getall', EitherQuestionController.get_all_questions);
 routes.post('/either/send', EitherQuestionController.send_question);
 
 /* CONTEXT ON STREAM */
-const ContextWordsController = requie('./controllers/context/WordsController');
+const ContextWordsController = require('./controllers/context/WordsController');
 routes.post('/context/send', ContextWordsController.send);
+routes.get('/context/words_list', ContextWordsController.get_all_words);
 
 module.exports = routes;
